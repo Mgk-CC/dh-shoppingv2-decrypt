@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <title>DH ShoppingV2 解密分析工具</title>
+  <link rel="stylesheet" href="/styles.css?v=20260722-3">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <h1>DH ShoppingV2 解密分析工具</h1>
+      <p>完全离线 · 支持 req / res · 原始 JSON 与清洗 JSON 双视图</p>
+      <small>修正版 20260722.3</small>
+    </header>
+
+    <section class="input-panel">
+      <label for="inputText">粘贴 req / res 密文</label>
+      <textarea id="inputText" spellcheck="false" placeholder="支持纯 Base64、{&quot;req&quot;:&quot;...&quot;} 或 {&quot;res&quot;:&quot;...&quot;}"></textarea>
+      <p class="hint">Base64 内仅会自动清理空格、Tab、CR、LF；包含 req 和 res 时会拒绝处理。</p>
+      <div class="actions">
+        <button id="decryptBtn">解密并分析</button>
+        <button id="clearBtn" class="secondary">清空</button>
+      </div>
+    </section>
+
+    <section id="status" class="status idle">等待输入。</section>
+    <section id="metrics" class="metrics"></section>
+    <section id="analysis" class="analysis"></section>
+
+    <section class="json-panel">
+      <div class="tabs">
+        <button data-tab="raw" class="active">原始 JSON</button>
+        <button data-tab="clean">清洗 JSON</button>
+        <button data-tab="analysisJson">分析 JSON</button>
+      </div>
+      <div class="json-toolbar">
+        <input id="searchInput" placeholder="JSON 关键字搜索">
+        <span id="searchResult"></span>
+        <button id="copyBtn" class="secondary" disabled>复制当前 JSON</button>
+        <button id="downloadJsonBtn" class="secondary" disabled>下载当前 JSON</button>
+        <button id="downloadCsvBtn" class="secondary" disabled>下载 flights.csv</button>
+        <span id="csvReason" class="hint"></span>
+      </div>
+      <pre id="jsonView" class="code"></pre>
+    </section>
+  </main>
+  <script src="/app.js?v=20260722-3"></script>
+</body>
+</html>

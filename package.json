@@ -1,0 +1,16 @@
+{
+  "name": "dh-shoppingv2-decrypt",
+  "version": "1.0.1",
+  "description": "Local offline DH shoppingv2 req/res decrypt and analysis tool.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "check": "node --check server.js && node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
